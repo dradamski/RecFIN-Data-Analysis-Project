@@ -22,7 +22,6 @@ for line in file:
 			id = 1000 + int(site[0][2])
 
 		site_dic[id] = st
-file.close()
 
 
 # creates site table in database
