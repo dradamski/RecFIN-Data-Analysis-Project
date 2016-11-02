@@ -2,7 +2,8 @@ import sqlite3
 import re
 import csv
 
-# Gets all site IDs
+# GETS ALL SITE IDS
+# opens site list
 file = open('SEC Route List.txt').readlines()[0].split('\r')
 
 site_dic = {}
@@ -21,13 +22,13 @@ for line in file:
 			id = 1000 + int(site[0][2])
 
 		site_dic[id] = st
-file.close()
 
 
-# creates site database
+# creates site table in database
 conn = sqlite3.connect('sitedb.sqlite')
 cur = conn.cursor()
 
+# deletes Sites table if it already exists 
 cur.execute('''
 DROP TABLE IF EXISTS Sites''')
 
@@ -47,6 +48,7 @@ for key, value in  site_dic.iteritems():
 cur.close()
 
 
+# ADDS DATA TO DATABASE IN Data TABLE
 
 with open('80-16.csv', 'rb') as csvfile:
 	reader = csv.DictReader(csvfile)
