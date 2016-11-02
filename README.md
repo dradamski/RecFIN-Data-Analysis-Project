@@ -1,15 +1,30 @@
 # RecFIN-Data-Analysis-Project
-This code takes data produced by RecFIN, does some statistical analysis on it, and produces graphic representations of the data.
+This code takes data produced by RecFIN, does some statistical analysis on it, and produces graphic representations 
+of the data. I eventually want to find a way to integrate this data with QGIS in order to map it out.
 
-The 80-16.csv file is produced by going to the link at the bottom of the RecFIN screen for 80-16.pdf and setting up the fields as shown in the pdf image. The data I'm using for this project is the data that has been collected from 1980 to 2016 for all shore fishing modes at every site in the Channel Islands/Ventura/Santa Barbara district (District 2).
+
 
 The order this code should be run in as of right now to produce the database:
   1. data2db.py (pulls data from 80-16.csv)
-  2. site2db.py (pulls data from SEC Route List.txt)
+  2. site2db.py (pulls data from SEC Route List.txt to create)
   3. add_site_id_to_data_db.py (adds site ids to database)
 
 Explanations of code not run above:
-
+  SEC Route List.txt
+      
+      List of sites with their site id numbers.
+  
+  80-16.csv
+      
+      CSV taken from RecFIN that contains all raw data. It is produced by going to the link at the bottom 
+      of the RecFIN screen for 80-16.pdf and setting up the fields as shown in the pdf image. The data I'm
+      using for this project is the data that has been collected from 1980 to 2016 for all shore fishing 
+      modes at every site in the Channel Islands/Ventura/Santa Barbara district (District 2).
+  
+  sitedb.sqlite
+      
+      Database created running steps 1 and 2 above.  Cleaned up version of csv data.  Used by visualize.py
+      and predict.py to perform analysis.
 
   visualize.py
 
