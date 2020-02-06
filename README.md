@@ -40,7 +40,5 @@ Explanations of files in repository:
   predict.py
       
       A script meant to make a prediction of the catch at a certain site for dates without data.  
-      It needs a lot of work because my statistics skills are a little rusty.  However, I hope to figure out 
-      whether this is done correctly or even needed.
   
   
